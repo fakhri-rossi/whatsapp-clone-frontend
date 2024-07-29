@@ -17,7 +17,11 @@ export default function ChatPage() {
 
   return (
     <div className="h-screen">
-      <h1>ChatPage</h1>
+      <h1 className="text-3xl font-bold">ChatPage</h1>
+
+      <h1 className="text-3xl font-light text-gray-900">
+        User can chat each other
+      </h1>
 
       <div>
         {chats &&
