@@ -6,17 +6,9 @@ export default function Login({ emailValue, passwordValue, onFormChange }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function triggerEmailChange(value) {
-    setEmail(value);
-  }
-
-  function triggerPasswordChange(value) {
-    setPassword(value);
-  }
-
-  function switchToRegister() {
-    onFormChange("register");
-  }
+  const triggerEmailChange = (value) => setEmail(value);
+  const triggerPasswordChange = (value) => setPassword(value);
+  const switchToRegister = () => onFormChange("register");
 
   return (
     <>

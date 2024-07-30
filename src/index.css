@@ -17,3 +17,10 @@ body {
   /* font-family: Helvetica, sans-serif; */
   /* font-family: "SF Pro Display", sans-serif; */
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}

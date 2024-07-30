@@ -9,28 +9,22 @@ export default function Register({ onFormChange }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  function onEmailChange(value) {
-    setEmail(value);
-  }
+  const onEmailChange = (value) => setEmail(value);
+  const onPasswordChange = (value) => setPassword(value);
+  const onNameChange = (value) => setName(value);
+  const onUsernameChange = (value) => setUsername(value);
+  const onConfirmPasswordChange = (value) => setConfirmPassword(value);
 
-  function onPasswordChange(value) {
-    setPassword(value);
-  }
+  const switchToLogin = () => onFormChange("login");
 
-  function onNameChange(value) {
-    setName(value);
-  }
-
-  function onUsernameChange(value) {
-    setUsername(value);
-  }
-
-  function onConfirmPasswordChange(value) {
-    setConfirmPassword(value);
-  }
-
-  function switchToLogin() {
-    onFormChange("login");
+  function handleRegister() {
+    console.log({
+      email,
+      name,
+      username,
+      password,
+      confirmPassword,
+    });
   }
 
   return (
@@ -57,7 +51,7 @@ export default function Register({ onFormChange }) {
       <h3 className="text-md font-medium text-slate-950">Confirm Password</h3>
       <Input onValueChange={onConfirmPasswordChange} type="password" />
 
-      <Button label="Register" />
+      <Button onClick={() => handleRegister()} label="Register" />
 
       <p className="text-slate-950 font-light">
         Have an account?{" "}
