@@ -27,7 +27,11 @@ export default function Input({ type = "text", value = "", onValueChange }) {
 
       {type === "password" && (
         <span onClick={toggleShowPassword}>
-          {showPassword ? <FaEyeSlash /> : <FaRegEye />}
+          {showPassword ? (
+            <FaEyeSlash className="cursor-pointer" />
+          ) : (
+            <FaRegEye className="cursor-pointer" />
+          )}
         </span>
       )}
     </div>
