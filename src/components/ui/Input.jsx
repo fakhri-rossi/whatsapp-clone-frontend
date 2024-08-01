@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { FaRegEye, FaEyeSlash } from "react-icons/fa";
+import { GoMention } from "react-icons/go";
 
-export default function Input({ type = "text", value = "", onValueChange }) {
+export default function Input({
+  type = "text",
+  value = "",
+  onValueChange,
+  isUsername = false,
+}) {
   const [inputValue, setInputValue] = useState(value);
   const [showPassword, setShowPassword] = useState(false);
   const [dynamicType, setDynamicType] = useState(type);
@@ -18,6 +24,12 @@ export default function Input({ type = "text", value = "", onValueChange }) {
 
   return (
     <div className="flex items-center justify-center py-2 px-4 border border-gray-600 rounded-full ">
+      {isUsername && (
+        <div className="pr-3">
+          <GoMention className="text-gray-500" />
+        </div>
+      )}
+
       <input
         value={inputValue}
         onChange={changeValue}

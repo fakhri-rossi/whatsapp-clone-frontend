@@ -17,4 +17,20 @@ const register = ({ name, username, email, password }) => {
   });
 };
 
-export { register };
+const registerVerify = ({ name, mediaFiles }) => {
+  const form = new FormData();
+  form.append("name", name);
+
+  // form.append("media_file", profileImage);
+  mediaFiles.forEach((mediaFile, index) => {
+    form.append(`media_file_${index}`, mediaFile);
+  });
+
+  console.log(form);
+
+  return axios.post("/api/user/register_verify", form, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+};
+
+export { register, registerVerify };
